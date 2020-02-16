@@ -11,16 +11,12 @@
 #' @export
 #' @importFrom plotly plot_ly
 #' @importFrom utils read.csv
+
 ghdi <- function(indicator)
 {
   common_file <- read.csv("common_file.csv", stringsAsFactors=FALSE)
   plotly::plot_ly(common_file[which(common_file$V1==indicator),], x = ~V3, y = ~V2,
                   mode="lines")
-
-
-  # plotly::plot_ly(saved_data[which(saved_data$V1==indicator),], x = ~V3, y = ~V2,
-  #                 mode="lines")
-
 }
 
 
